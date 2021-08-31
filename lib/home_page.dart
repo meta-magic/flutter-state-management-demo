@@ -4,6 +4,7 @@ import 'package:state_management_example/child_home_page.dart';
 import 'package:state_management_example/increament_model.dart';
 import 'package:state_management_example/increament_page.dart';
 import 'package:state_management_example/product_list_page.dart';
+import 'package:state_management_example/providers/product_list.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage();
@@ -14,10 +15,17 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text("State Management Demo"),
         ),
-        body: Column(children: [
-          ChangeNotifierProvider<IncreamentModel>(
-              create: (context) => IncreamentModel(1.0),
-              child: IncreamentPage())
-        ]));
+        body: Column(
+          children: [
+              ChangeNotifierProvider<IncreamentModel>(
+                create: (context) => IncreamentModel(1.0),
+                child: IncreamentPage()
+              ),
+               ChangeNotifierProvider<ProductList>(
+                create: (context) => ProductList(),
+                child: ProductListPage()
+              )
+          ]
+        ));
   }
 }

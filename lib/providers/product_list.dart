@@ -3,12 +3,18 @@ import 'package:state_management_example/models/product.dart';
 
 class ProductList with ChangeNotifier {
   List<Product> products = [
-    new Product("IPhon 12"),
-    new Product("IPhon 11"),
-    new Product("IPhon 10"),
-    new Product("IPhon 09"),
-    new Product("IPhon 08"),
-    new Product("IPhon 07"),
-    new Product("IPhon 06")
+    new Product("IPhone 12"),
+    new Product("IPhone 11"),
+    new Product("IPhone 10"),
+    new Product("IPhone 09"),
+    new Product("IPhone 08"),
+    new Product("IPhone 07"),
+    new Product("IPhone 06")
   ];
+
+  void addProduct(){
+    this.products.add(new Product('IPhone '+(this.products.length+1).toString()));
+    notifyListeners();
+
+  }
 }
