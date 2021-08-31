@@ -6,6 +6,11 @@ class ChildHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Child: '+this.value.toString());
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text('Child: '+this.value.toString()),
+      ],
+    );
   }
 }

@@ -12,10 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: ChangeNotifierProvider<IncreamentModel>(
-        create: (context)=>IncreamentModel(1.0),
-        child: MyHomePage(),
-      ),
+      home:  MyHomePage(),
     );
   }
 }
